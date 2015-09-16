@@ -1,4 +1,4 @@
-#pragma once // защита от двойного подключения
+п»ї#pragma once // Р·Р°С‰РёС‚Р° РѕС‚ РґРІРѕР№РЅРѕРіРѕ РїРѕРґРєР»СЋС‡РµРЅРёСЏ
 #include <iostream>
 using namespace std;
 #include<cstdlib>
@@ -14,22 +14,22 @@ public:
 	{
 	}
 
-	void addRandMatrix() // Задаем матрицу TODO: cделать, чтобы размерность заносилась самостоятельно
+	void addRandMatrix() // Р“РµРЅРµСЂРёСЂСѓРµС‚ РјР°С‚СЂРёС†Сѓ TODO: cРґРµР»Р°С‚СЊ, С‡С‚РѕР±С‹ СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ Р·Р°РЅРѕСЃРёР»Р°СЃСЊ СЃР°РјРѕСЃС‚РѕСЏС‚РµР»СЊРЅРѕ
 	{
-		srand(time(NULL)); // Рандом
+		srand(time(NULL)); // Р Р°РЅРґРѕРј
 		for (int i = 0; i < DIMENSION; i++)
 		{
 			for (int j = 0; j < DIMENSION; j++)
 			{
-				matrix[i][j] = rand() % 100; // заносим случайное число от 0 до 99
+				matrix[i][j] = rand() % 100; // Р·Р°РЅРѕСЃРёРј СЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ РѕС‚ 0 РґРѕ 99
 			}
 		}
 		cout << endl;
 	}
 
-	void printMatrix()
+	void printMatrix() // РџРµС‡Р°С‚Р°РµС‚ РјР°С‚СЂРёС†Сѓ
 	{
-		cout << "Ваша матрица: \n" << endl;
+		cout << "Р’Р°С€Р° РјР°С‚СЂРёС†Р°: \n" << endl;
 		for (int i = 0; i < DIMENSION; i++)
 		{
 			for (int j = 0; j < DIMENSION; j++)
@@ -39,21 +39,21 @@ public:
 			cout << endl;
 		}
 		cout << endl;
-	}
+	} 
 
-	int getIntMatrix(int i, int j) // Вернет [i][j] элемент матрицы
+	int getIntMatrix(int i, int j) // Р’РѕР·РІСЂР°С‰Р°РµС‚ [i][j] СЌР»РµРјРµРЅС‚ РјР°С‚СЂРёС†С‹
 	{
 		return matrix[i][j];
 	}
 
-	void getTransMatrix()
+	void getTransMatrix() // Р’РѕР·РІСЂР°С‰Р°РµС‚ С‚СЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРЅСѓСЋ РјР°С‚СЂРёС†Сѓ
 	{
-		cout << "Ваша транспонированная матрица: \n" << endl;
+		cout << "Р’Р°С€Р° С‚СЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРЅР°СЏ РјР°С‚СЂРёС†Р°: \n" << endl;
 		for (int i = 0; i < DIMENSION; i++)
 		{
 			for (int j = 0; j < DIMENSION; j++)
 			{
-				trans_matrix[i][j] = matrix[j][i];
+				trans_matrix[j][i] = matrix[i][j];
 				cout << trans_matrix[i][j] << "\t";
 			}
 			cout << endl;
@@ -62,21 +62,21 @@ public:
 
 	}
 
-	// Получение матрицы без i-й строки и j-го столбца
+	// РџРѕР»СѓС‡РµРЅРёРµ РјР°С‚СЂРёС†С‹ Р±РµР· i-Р№ СЃС‚СЂРѕРєРё Рё j-РіРѕ СЃС‚РѕР»Р±С†Р°
 	void GetMatr(int **mas, int **p, int i, int j, int m) {
 		int ki, kj, di, dj;
 		di = 0;
-		for (ki = 0; ki<m - 1; ki++) { // проверка индекса строки
+		for (ki = 0; ki<m - 1; ki++) { // РїСЂРѕРІРµСЂРєР° РёРЅРґРµРєСЃР° СЃС‚СЂРѕРєРё
 			if (ki == i)  di = 1;
 			dj = 0;
-			for (kj = 0; kj<m - 1; kj++) { // проверка индекса столбца
+			for (kj = 0; kj<m - 1; kj++) { // РїСЂРѕРІРµСЂРєР° РёРЅРґРµРєСЃР° СЃС‚РѕР»Р±С†Р°
 				if (kj == j)  dj = 1;
 				p[ki][kj] = mas[ki + di][kj + dj];
 			}
 		}
 	}
 
-	int determinant(int **mas, int m) {
+	int determinant(int **mas, int m) { // Р’С‹С‡РёСЃР»СЏРµС‚ РѕРїСЂРµРґРµР»РёС‚РµР»СЊ РјР°С‚СЂРёС†С‹
 		int i, j, d, k, n;
 		int **p;
 		p = new int*[m];
@@ -85,11 +85,11 @@ public:
 			p[i] = new int[m];
 
 		j = 0; d = 0;
-		k = 1; //(-1) в степени i
+		k = 1; //(-1) РІ СЃС‚РµРїРµРЅРё i
 		n = m - 1;
 
 		if (m<1)  
-			cout << "Определитель вычислить невозможно!";
+			cout << "РћРїСЂРµРґРµР»РёС‚РµР»СЊ РІС‹С‡РёСЃР»РёС‚СЊ РЅРµРІРѕР·РјРѕР¶РЅРѕ!";
 
 		if (m == 1) 
 		{
@@ -116,8 +116,8 @@ public:
 	}
 
 private:
-	int const DIMENSION = 4; // размерность
-	int matrix[4][4]; // матрица
-	int trans_matrix[4][4]; // транспонированная матрица
+	int const DIMENSION = 4; // СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ
+	int matrix[4][4]; // РјР°С‚СЂРёС†Р°
+	int trans_matrix[4][4]; // С‚СЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРЅР°СЏ РјР°С‚СЂРёС†Р°
 };
 
