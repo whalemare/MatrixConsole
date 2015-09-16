@@ -22,6 +22,7 @@ int main()
 
 	setlocale(LC_ALL, "Russian");
 	boolean finish = false;
+	boolean exit = false;
 	cout << "В настоящий момент Вы работаете со следующей матрицей:\n";
 	matrix.addRandMatrix(); // Инициализируем матрицу
 	matrix.printMatrix();
@@ -44,21 +45,26 @@ int main()
 		{
 		case 1:
 			system("cls");
-
-			matrix.addRandMatrix();
-			cout << "Ваша новая матрица:\n\n";
-			matrix.printMatrix();
-			char answer;
-			cout << "Продолжить работу? y или n";
-			cin >> answer;
-			if (answer == 'y')
-			{
-				finish = false; // для наглядности
-				system("cls");
+			exit = false;
+			while(exit == false)
+			{ 
+				matrix.addRandMatrix();
 				matrix.printMatrix();
+				char answer;
+				cout << "Продолжить работу (y) или сгенерировать повторно(n)?\n>> ";
+				cin >> answer;
+				if (answer == 'y')
+				{
+					finish = false; // для наглядности
+					exit = true;
+					system("cls");
+					matrix.printMatrix();
+				}
+				else
+				{
+					system("cls");
+				}
 			}
-			else
-				finish = true;
 			break;
 		case 2:
 			system("cls");
@@ -74,7 +80,9 @@ int main()
 				}
 			}
 
-			cout << "Определитель матрицы равен: " << matrix.determinant(mas, 4) << endl;
+			system("cls");
+			matrix.printMatrix();
+			cout << "Определитель матрицы равен: " << matrix.determinant(mas, 4) << endl << endl;
 			break;
 		default:
 			return 0;

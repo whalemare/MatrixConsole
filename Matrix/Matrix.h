@@ -38,7 +38,7 @@ public:
 			}
 			cout << endl;
 		}
-		cout << endl;
+		cout << endl << endl;
 	} 
 
 	int getIntMatrix(int i, int j) // Возвращает [i][j] элемент матрицы
@@ -48,28 +48,32 @@ public:
 
 	void getTransMatrix() // Возвращает транспонированную матрицу
 	{
+		int temp[4][4];
 		cout << "Ваша транспонированная матрица: \n" << endl;
 		for (int i = 0; i < DIMENSION; i++)
 		{
 			for (int j = 0; j < DIMENSION; j++)
 			{
-				trans_matrix[j][i] = matrix[i][j];
+				trans_matrix[i][j] = matrix[j][i];
 				cout << trans_matrix[i][j] << "\t";
 			}
 			cout << endl;
 		}
-		cout << endl;
 
+		//Присвоим обычной матрице транспонированное значение
+		for (int i = 0; i < DIMENSION; i++)
+			for (int j = 0; j < DIMENSION; j++)
+				matrix[i][j] = trans_matrix[i][j];
 	}
 
 	// Получение матрицы без i-й строки и j-го столбца
 	void GetMatr(int **mas, int **p, int i, int j, int m) {
 		int ki, kj, di, dj;
 		di = 0;
-		for (ki = 0; ki<m - 1; ki++) { // проверка индекса строки
+		for (ki = 0; ki < m - 1; ki++) { // проверка индекса строки
 			if (ki == i)  di = 1;
 			dj = 0;
-			for (kj = 0; kj<m - 1; kj++) { // проверка индекса столбца
+			for (kj = 0; kj < m - 1; kj++) { // проверка индекса столбца
 				if (kj == j)  dj = 1;
 				p[ki][kj] = mas[ki + di][kj + dj];
 			}
