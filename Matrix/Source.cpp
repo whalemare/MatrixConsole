@@ -1,6 +1,6 @@
 ﻿#include <iostream>
-#include "Matrix.h"
 #include <clocale>
+#include "Matrix.h"
 #define boolean int // Небольшой костыль
 #define false 0
 #define true 1
