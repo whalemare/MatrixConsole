@@ -39,7 +39,6 @@ using namespace std;
 
 	void Matrix::getTransMatrix() // ¬озвращает транспонированную матрицу
 	{
-		int temp[4][4];
 		cout << "¬аша транспонированна€ матрица: \n" << endl;
 		for (int i = 0; i < DIMENSION; i++)
 		{
@@ -109,3 +108,49 @@ using namespace std;
 		}
 		return(d);
 	}
+
+	Matrix Matrix::operator++()
+	{
+		Matrix temp;
+		for (int i = 0; i < 4; i++)
+			for (int j = 0; j < 4; j++)
+			{
+				matrix[i][j]++;
+				temp.matrix[i][j] = matrix[i][j];
+			}
+		return temp;
+	}
+
+	Matrix Matrix::operator--()
+	{
+		Matrix temp;
+		for (int i = 0; i < 4; i++)
+			for (int j = 0; j < 4; j++)
+			{
+				matrix[i][j]--;
+				temp.matrix[i][j] = matrix[i][j];
+			}
+		return temp;
+	}
+
+	Matrix Matrix::operator+(Matrix m2)
+	{
+		Matrix result;
+		for (int i = 0; i < 4; i++)
+			for (int j = 0; j < 4; j++)
+				result.matrix[i][j] = matrix[i][j] + m2.matrix[i][j];
+
+		return result;
+	}
+
+	Matrix Matrix::operator-(Matrix m2)
+	{
+		Matrix result;
+		for (int i = 0; i < 4; i++)
+			for (int j = 0; j < 4; j++)
+				result.matrix[i][j] = matrix[i][j] - m2.matrix[i][j];
+
+		return result;
+	}
+
+	

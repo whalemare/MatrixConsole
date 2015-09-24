@@ -34,6 +34,8 @@ int main()
 		cout << "1. Сгенерировать матрицу заново\n";
 		cout << "2. Транспонировать матрицу\n";
 		cout << "3. Вычислить определитель\n";
+		cout << "4. Увеличить все элементы матрицы на единицу\n";
+		cout << "5. Уменьшить все элементы матрицы на единицу\n";
 		cout << "Введите любое другое число, чтобы закрыть программу...\n\n";
 		cout << ">> ";
 
@@ -84,6 +86,48 @@ int main()
 			matrix.printMatrix();
 			cout << "Определитель матрицы равен: " << matrix.determinant(mas, 4) << endl << endl;
 			break;
+		case 4:
+			system("cls");
+			matrix.printMatrix();
+			cout << "\nПосле увеличения" << endl;
+			++matrix;
+			matrix.printMatrix();
+			break;
+		case 5:
+			cout << "Уменьшить все элементы матрицы на единицу" << endl;
+			matrix.printMatrix();
+			cout << "\nПосле уменьшения" << endl;
+			--matrix;
+			matrix.printMatrix();
+			break;
+		case 6:
+		{
+			system("cls");
+			Matrix temp;
+			cout << "Сложить две матрицы:" << endl;
+			matrix.printMatrix(); // 1 матрицу покажем
+			temp.addRandMatrix();
+			temp.printMatrix(); // 2 матрицу покажем
+						
+			(matrix+temp).printMatrix(); // складываем две матрицы
+			break;
+		}
+		case 7:
+		{
+			system("cls");
+			Matrix temp;
+			cout << "Вычесть две матрицы:" << endl;
+			matrix.printMatrix(); // 1 матрицу покажем
+			temp.addRandMatrix();
+			temp.printMatrix(); // 2 матрицу покажем
+
+			(matrix - temp).printMatrix(); // складываем две матрицы
+			break;
+		}
+		case 8:
+			system("cls");
+			cout << "Сложение инт";
+			cout << "Сложение double";
 		default:
 			return 0;
 		}

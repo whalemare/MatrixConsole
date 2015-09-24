@@ -4,16 +4,19 @@
 
 class Matrix
 {
+
+private:
+	int const DIMENSION = 4; // размерность
+	int matrix[4][4]; // матрица
+	int trans_matrix[4][4]; // транспонированная матрица
+
 public:
+	Matrix::Matrix() // Конструктор
+	{}
 
-	Matrix::Matrix()
+	Matrix::~Matrix() // Деструктор
 	{
 	}
-
-	Matrix::~Matrix()
-	{
-	}
-
 
 	void addRandMatrix(); // Генерирует матрицу TODO: cделать, чтобы размерность заносилась самостоятельно
 
@@ -27,10 +30,20 @@ public:
 
 	int determinant(int **mas, int m); // Вычисляет определитель матрицы
 
-private:
-	int const DIMENSION = 4; // размерность
-	int matrix[4][4]; // матрица
-	int trans_matrix[4][4]; // транспонированная матрица
+	// a3 = a1 + a2
+	Matrix operator++(); // Перегрузка операторов: унарное сложение
+
+	Matrix operator--(); // Перегрузка операторов: унарное вычитание
+
+	Matrix operator+(Matrix); // Перегрузка операторов: бинарное сложение
+
+	Matrix operator-(Matrix); 
+
+	void multiplicMatrix(); // Перегрузка операторов: умножение матриц
+
+	void subtrMatrix(); // Перегрузка операторов: вычитание матриц
+
+	void divisionMatrix(); // Перегрузка операторов: деление матриц
 };
 
 #endif
