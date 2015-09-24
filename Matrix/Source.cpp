@@ -21,12 +21,11 @@ int main()
 	Matrix matrix;
 
 	setlocale(LC_ALL, "Russian");
-	boolean finish = false;
-	boolean exit = false;
+	boolean finish = false; // флаг выхода из программы
+	boolean exit = false; // флаг выхода из подменю
 	cout << "В настоящий момент Вы работаете со следующей матрицей:\n";
 	matrix.addRandMatrix(); // Инициализируем матрицу
 	matrix.printMatrix();
-
 
 	while (finish == false)
 	{
@@ -36,6 +35,8 @@ int main()
 		cout << "3. Вычислить определитель\n";
 		cout << "4. Увеличить все элементы матрицы на единицу\n";
 		cout << "5. Уменьшить все элементы матрицы на единицу\n";
+		cout << "6. Сложить две рандомные матрицы\n";
+		cout << "7. Вычесть две рандомные матрицы\n";
 		cout << "Введите любое другое число, чтобы закрыть программу...\n\n";
 		cout << ">> ";
 
@@ -107,8 +108,7 @@ int main()
 			cout << "Сложить две матрицы:" << endl;
 			matrix.printMatrix(); // 1 матрицу покажем
 			temp.addRandMatrix();
-			temp.printMatrix(); // 2 матрицу покажем
-						
+			temp.printMatrix(); // 2 матрицу покажем	
 			(matrix+temp).printMatrix(); // складываем две матрицы
 			break;
 		}
