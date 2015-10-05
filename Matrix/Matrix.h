@@ -37,13 +37,7 @@ public:
 
 	Matrix operator+(Matrix); // Перегрузка операторов: бинарное сложение
 
-	Matrix operator-(Matrix); 
-
-	void multiplicMatrix(); // Перегрузка операторов: умножение матриц
-
-	void subtrMatrix(); // Перегрузка операторов: вычитание матриц
-
-	void divisionMatrix(); // Перегрузка операторов: деление матриц
+	Matrix operator-(Matrix); // Перегрузка операторовН: бинарное вычитание
 };
 
 #endif

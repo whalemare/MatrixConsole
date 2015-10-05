@@ -1,4 +1,4 @@
-﻿Build started 24.09.2015 15:06:32.
+﻿Build started 05.10.2015 14:12:39.
      1>Project "C:\Users\nanos\documents\visual studio 2015\Projects\Matrix\Matrix\Matrix.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          D:\Data\Visual Studio Enterprise 2015\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
@@ -11,4 +11,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.96
+Time Elapsed 00:00:04.48
