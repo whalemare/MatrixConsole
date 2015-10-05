@@ -5,7 +5,7 @@
 <br>
 Программа осуществляющая работу с матрицами. Также присутствует отчет. Ключевые особенности: <br><br>
 
-<img src="https://github.com/whalemare/MatrixConsole/Matrix/screen.png">
+<img src="https://raw.githubusercontent.com/whalemare/MatrixConsole/master/Matrix/screen.png">
 
 <br><br>
 
